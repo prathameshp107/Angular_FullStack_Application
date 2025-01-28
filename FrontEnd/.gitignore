@@ -1,0 +1,47 @@
+# Ignore node_modules folders
+Frontend/node_modules/
+Backend/node_modules/
+
+# Ignore .angular folders
+Frontend/.angular/
+
+
+# Node.js dependencies
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Build output
+dist/
+build/
+
+# Logs
+logs/
+*.log
+
+# Dependency directories
+jspm_packages/
+
+# Optional npm cache directory
+.npm/
+
+# Optional eslint cache
+.eslintcache
+
+# Optional REPL history
+.node_repl_history
+
+# IDEs and editors
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Environment variables
+.env
+
+# Miscellaneous
+.DS_Store
+Thumbs.db

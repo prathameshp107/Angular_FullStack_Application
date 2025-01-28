@@ -1,0 +1,51 @@
+<div class="mainContainer">
+    <div class="innerContainer">
+        <div class="photoSection"></div>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <div class="contentSection">
+                <div class="titleSection">
+                    <h2 class="title">Welcome Back!</h2>
+                    <p class="subtitle">Sign in to your account</p>
+                </div>
+                <div class="inputFields">
+                    <div class="socialMedia">
+                        <span class="bi bi-google" (click)="loginWithSocialSite('google')"></span>
+                        <span class="bi bi-twitter" (click)="loginWithSocialSite('twitter')"></span>
+                        <span class="bi bi-facebook" (click)="loginWithSocialSite('facebook')"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" name="email" id="email" placeholder="Enter your email" class="form-control"
+                            formControlName="email">
+                        <div *ngIf="activeError === 'email'" class="error-message">
+                            Plese enter your email 📧
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" name="password" id="password" placeholder="Enter your password"
+                            class="form-control" formControlName="password">
+                        <div *ngIf="activeError === 'password'" class="error-message">
+                            Plese enter your password 🔒
+                        </div>
+                        <div *ngIf="activeError === 'passwordMismatch'" class="error-message">
+                            Invalid password please try again 🔒
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="rememberMe">
+                        <label for="rememberMe">Remember me</label>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Sign In</button>
+
+                <div class="additionalOptions">
+                    <a routerLink="/forgot-password" class="forgot-password">Forgot Password?</a>
+                    <p class="create-account-message">Don't have an account? <a routerLink="/register">Create an
+                            Account</a></p>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

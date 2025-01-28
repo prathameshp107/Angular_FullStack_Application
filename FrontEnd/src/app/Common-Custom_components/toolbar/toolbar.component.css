@@ -1,0 +1,46 @@
+.navbar {
+  background-color: #f8f9fa !important;
+}
+
+.nav-link {
+  margin-right: 15px;
+  font-size: 16px;
+  color: #007bff !important;
+}
+
+.nav-link:hover {
+  color: #0056b3 !important;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+#navbarNav {
+  margin-left: 50px;
+  justify-content: space-between;
+}
+
+
+.logoDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background-color: #f8f9fa;
+  justify-content: space-between;
+  padding-left: 10px;
+  padding-right: 10px
+}
+
+#logo {
+ font-size: 35px;
+ color: #007bff;
+}
+
+#logoText {
+  font-size: 25px;
+  font-weight: bold;
+  color: #010202;
+}

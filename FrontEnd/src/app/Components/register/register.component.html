@@ -1,0 +1,80 @@
+<div class="mainContainer">
+  <div class="innerContainer">
+    <div class="photoSection"></div>
+    <div class="contentSection">
+      <div class="titleSection">
+        <h2 class="title">Create an Account</h2>
+        <p class="subtitle">Sign up to get started</p>
+      </div>
+      <div class="formFields">
+        <div class="socialMedia">
+          <span class="bi bi-google" (click)="loginWithSocialSite('google')"></span>
+          <span class="bi bi-twitter" (click)="loginWithSocialSite('twitter')"></span>
+          <span class="bi bi-facebook"  (click)="loginWithSocialSite('facebook')"></span>
+        </div>
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+          <div class="form-group-for-name">
+            <div class="form-group-name">
+              <label for="firstname" class="form-label">firstname</label>
+              <input type="text" id="firstname" formControlName="firstname" class="form-control"
+                placeholder="Enter your firstname" required>
+              <div *ngIf="activeError === 'firstname'" class="error-message" [ngClass]="{ hidden: hideError }">
+                Plese enter your firstname 👨‍🦰 
+              </div>
+            </div>
+            <div class="form-group-name">
+              <label for="lastname" class="form-label">lastname</label>
+              <input type="text" id="lastname" formControlName="lastname" class="form-control"
+                placeholder="Enter your lastname" required>
+              <div *ngIf="activeError === 'lastname'" class="error-message" [ngClass]="{ hidden: hideError }">
+                Please enter your lastname 👨
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" id="email" formControlName="email" class="form-control" placeholder="Enter your email"
+              required>
+            <div *ngIf="activeError === 'email'" class="error-message" [ngClass]="{ hidden: hideError }">
+                Please enter your email 📧
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="form-group">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" id="password" formControlName="password" placeholder="Enter your password"
+                class="form-control" required>
+              <div *ngIf="activeError === 'password'" class="error-message" [ngClass]="{ hidden: hideError }"> Please
+                enter your password 🔒
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="confirmPassword" class="form-label">Confirm Password</label>
+              <input type="password" id="confirmPassword" formControlName="confirmPassword"
+                placeholder="Confirm your password" class="form-control" required>
+                <div *ngIf="activeError === 'confirmPassword'" class="error-message" [ngClass]="{ hidden: hideError }"> 
+                  Please confirm your password 🔒
+              </div>
+            </div>
+            <div *ngIf="activeError === 'passwordMismatch'" class="error-message" [ngClass]="{ hidden: hideError }">
+              Password and confirm password do not match 🔒
+            </div>
+          </div>
+          <div class="mb-3">
+            <!-- reCAPTCHA -->
+            <!-- <re-captcha
+                          (resolved)="onCaptchaResolved($event)"
+                          siteKey="6LfmvKUqAAAAAHrrEy5OHG1ZejOa1pBc3oMEHNQc"
+                        ></re-captcha> -->
+          </div>
+          <button type="submit" class="btn btn-primary">Sign Up</button>
+        </form>
+
+        <div class="additionalOptions">
+          <span class="account-message">Already have an account? </span><a routerLink="/login">LOG IN</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-custom-snackbar></app-custom-snackbar>

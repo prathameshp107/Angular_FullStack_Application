@@ -1,0 +1,108 @@
+.custom-snackbar {
+  position: fixed;
+  background-color: #f9f9f9; /* Darker background */
+  color: #0e0101d7;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 800;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  opacity: 0;
+  transform: translateX(-50%) translateY(30px);
+}
+
+.custom-snackbar.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Positioning Classes */
+.custom-snackbar.top.start {
+  top: 20px;
+  left: 20px;
+  transform: translateX(0) translateY(0);
+}
+
+.custom-snackbar.top.center {
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%) translateY(0);
+}
+
+.custom-snackbar.top.end {
+  top: 20px;
+  right: 20px;
+  transform: translateX(0) translateY(0);
+}
+
+.custom-snackbar.middle.start {
+  top: 50%;
+  left: 20px;
+  transform: translateX(0) translateY(-50%);
+}
+
+.custom-snackbar.middle.center {
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.custom-snackbar.middle.end {
+  top: 50%;
+  right: 20px;
+  transform: translateX(0) translateY(-50%);
+}
+
+.custom-snackbar.bottom.start {
+  bottom: 20px;
+  left: 20px;
+  transform: translateX(0) translateY(0);
+}
+
+.custom-snackbar.bottom.center {
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%) translateY(0);
+}
+
+.custom-snackbar.bottom.end {
+  bottom: 20px;
+  right: 20px;
+  transform: translateX(0) translateY(0);
+}
+
+/* Snackbar Text Styling */
+.custom-snackbar .snackbar-text {
+  font-size: 16px;
+  line-height: 1.4;
+  text-align: center;
+  padding: 0 10px;
+  font-family: Arial, sans-serif;
+  font-weight: 500;
+  word-wrap: break-word;
+  max-width: 300px; /* Set max width to prevent overflowing */
+  word-break: break-word;
+  white-space: normal;
+  overflow-wrap: break-word;
+}
+
+/* Close Button Styling */
+.custom-snackbar .snackbar-close-btn {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
+  color: #000000;
+  font-size: 20px;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  opacity: 0.8;
+}
+
+.custom-snackbar .snackbar-close-btn:hover {
+  opacity: 1;
+}
+

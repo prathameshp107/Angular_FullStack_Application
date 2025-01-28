@@ -1,0 +1,225 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Main container */
+.mainContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f8f9fa;
+    min-height: 100vh;
+}
+
+/* Inner container */
+.innerContainer {
+    width: 500px;
+    /* height: vh; */
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+/* Photo section */
+.photoSection {
+    background-image: url('../../../../public/bg-1.jpg.webp');
+    background-size: cover;
+    background-position: center;
+    height: 120px; /* Adjust the height as needed */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+
+/* Content section */
+.contentSection {
+    padding: 10px 0;
+}
+
+/* Title section */
+.titleSection {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333; /* Dark gray color for titles */
+}
+
+.subtitle {
+    font-size: 14px;
+    color: #666; /* Medium gray color for subtitles */
+}
+
+/* Input fields */
+.inputFields {
+    margin-bottom: 15px;
+}
+
+.socialMedia {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.bi {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: #007bff; /* Primary color for social media icons */
+    border-radius: 50%;
+    margin: 0 5px;
+    color: #fff; /* White color for icon */
+    font-size: 18px;
+}
+
+/* Form group */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-label {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+    color: #333; /* Dark gray color for form labels */
+    font-family: 'Poppins', sans-serif;
+}
+
+.form-control {
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    margin-bottom: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: #007bff; /* Primary color for input focus */
+}
+
+/* Button */
+.btn {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff; /* Primary color for buttons */
+    color: #fff; /* White color for button text */
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0056b3; /* Darker shade of primary color on hover */
+}
+
+/* Additional options */
+.additionalOptions {
+    text-align: center;
+}
+
+.forgot-password,
+.create-account {
+    font-size: 14px;
+    color: #007bff; /* Primary color for links */
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.forgot-password:hover,
+.create-account:hover {
+    text-decoration: underline;
+    color: #0056b3; /* Darker shade of primary color on hover */
+}
+
+.checkbox-group {
+    margin-bottom: 16px;
+}
+
+.checkbox-group input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.checkbox-group label {
+    font-size: 14px;
+    color: #666; /* Medium gray color for checkbox label */
+}
+
+.checkbox-group input[type="checkbox"]:checked + label {
+    font-weight: bold;
+    color: #333; /* Dark gray color for checked checkbox label */
+}
+
+.create-account-message {
+    font-size: 14px;
+    color: #666; /* Medium gray color for message */
+    margin-top: 8px; /* Add some space above the message */
+}
+
+#rememberMe {
+    margin-right: 5px;
+}
+
+
+.error-message {
+    background-color: #f8d7da;
+    /* Light red background for error */
+    color: #721c24;
+    /* Dark red text color */
+    padding: 8px 12px;
+    margin-top: 4px;
+    font-size: 14px;
+    border-radius: 4px;
+    display: inline-block;
+    /* Adjust width automatically based on text */
+    visibility: visible;
+    opacity: 1;
+    animation: fadeIn 0.3s ease-out;
+    transition: opacity 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.error-message::before {
+    content: '⚠️';
+    margin-right: 1px;
+    /* Space between the icon and the message */
+    font-size: 1.0rem;
+    /* Slightly larger icon */
+    vertical-align: middle;
+    /* Align the icon with the text */
+}
+
+
