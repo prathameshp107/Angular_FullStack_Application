@@ -1,0 +1,71 @@
+/* Centering the Form */
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f4f4f4;
+    padding: 20px;
+}
+
+/* Contact Form Styling */
+.contact-form {
+    width: 100%;
+    max-width: 400px;
+    padding: 30px;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Title Styling */
+.contact-form .title {
+    font-size: 26px;
+    font-weight: 600;
+    color: royalblue;
+    margin-bottom: 15px;
+}
+
+/* Input Fields */
+.input, .textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    margin-bottom: 12px;
+    transition: 0.3s ease-in-out;
+}
+
+.input:focus, .textarea:focus {
+    border-color: royalblue;
+    box-shadow: 0 0 6px rgba(65, 105, 225, 0.3);
+    outline: none;
+}
+
+/* Textarea Styling */
+.textarea {
+    height: 120px;
+    resize: none;
+}
+
+/* Submit Button */
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: royalblue;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.submit-btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}

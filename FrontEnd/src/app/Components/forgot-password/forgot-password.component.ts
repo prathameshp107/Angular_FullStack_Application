@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import * as THREE from 'three';
 
 @Component({
   selector: 'app-forgot-password',
@@ -11,6 +12,7 @@ import { RouterModule } from '@angular/router';
 export class ForgotPasswordComponent implements OnInit {
 
   constructor() { }
+  
 
   ngOnInit() {
   }

@@ -33,6 +33,7 @@ export class LoginComponent {
   rememberMe: boolean = false;
   loginForm!: FormGroup;
   activeError: string | null = null;
+  hideError = false;
 
 
   constructor(private formBuilder: FormBuilder, private RegisterService: RegisterService, private router: Router) { }
@@ -93,6 +94,10 @@ export class LoginComponent {
     }else {
       this.activeError = null;
     }
+
+    setTimeout(() => {
+      this.hideError = true;
+    }, 3000);
 
   }
 

@@ -6,7 +6,14 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
 }
 
 /* Main container */
@@ -14,81 +21,160 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
     height: 100vh;
-    background-color: #f8f9fa;
-    min-height: 100vh;
+    padding: 20px;
 }
 
 /* Inner container */
 .innerContainer {
-    width: 500px;
-    /* height: vh; */
+    display: flex;
+    max-width: 900px;
+    width: 100%;
     background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    animation: fadeInUp 0.8s ease-out;
 }
 
-/* Photo section */
+
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Photo section with overlay text */
 .photoSection {
+    flex: 1;
     background-image: url('../../../../public/bg-1.jpg.webp');
     background-size: cover;
     background-position: center;
-    height: 120px; /* Adjust the height as needed */
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
+.photoSection::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
 
-/* Content section */
-.contentSection {
-    padding: 10px 0;
+.overlayText {
+    position: relative;
+    z-index: 1;
+    color: #fff;
+    animation: float 10s ease-in-out infinite; /* Apply animation to overlay text only */
+}
+
+.overlayText h1 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.overlayText p {
+    font-size: 18px;
+    font-weight: 400;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Login Form */
+.loginForm {
+    flex: 1;
+    padding: 40px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 /* Title section */
 .titleSection {
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .title {
-    font-size: 24px;
+    font-size: 28px;
     font-weight: bold;
-    color: #333; /* Dark gray color for titles */
+    color: #333;
+    margin-bottom: 5px;
 }
 
 .subtitle {
-    font-size: 14px;
-    color: #666; /* Medium gray color for subtitles */
+    font-size: 16px;
+    color: #666;
 }
 
-/* Input fields */
-.inputFields {
-    margin-bottom: 15px;
-}
-
+/* Social Media Icons */
 .socialMedia {
     display: flex;
     justify-content: center;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .bi {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
-    background-color: #007bff; /* Primary color for social media icons */
+    width: 50px;
+    height: 50px;
+    background-color: #007bff;
     border-radius: 50%;
-    margin: 0 5px;
-    color: #fff; /* White color for icon */
-    font-size: 18px;
+    margin: 0 10px;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-/* Form group */
+.bi:hover {
+    transform: scale(1.1);
+    background-color: #0056b3;
+}
+
+/* Divider */
+.divider {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.dividerLine {
+    flex: 1;
+    height: 1px;
+    background-color: #ccc;
+}
+
+.dividerText {
+    margin: 0 10px;
+    color: #666;
+    font-size: 14px;
+}
+
+/* Input Fields */
+.inputFields {
+    margin-bottom: 20px;
+}
+
 .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .form-label {
@@ -96,107 +182,125 @@ body {
     font-weight: bold;
     margin-bottom: 5px;
     display: block;
-    color: #333; /* Dark gray color for form labels */
-    font-family: 'Poppins', sans-serif;
+    color: #333;
 }
 
 .form-control {
     width: 100%;
-    height: 40px;
+    height: 50px;
     padding: 10px;
     margin-bottom: 8px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 8px;
     font-size: 16px;
-    transition: border-color 0.3s ease;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .form-control:focus {
     outline: none;
-    border-color: #007bff; /* Primary color for input focus */
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
 }
 
-/* Button */
-.btn {
-    display: block;
-    width: 100%;
-    padding: 10px 0;
-    border: none;
-    border-radius: 5px;
-    background-color: #007bff; /* Primary color for buttons */
-    color: #fff; /* White color for button text */
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.btn:hover {
-    background-color: #0056b3; /* Darker shade of primary color on hover */
-}
-
-/* Additional options */
-.additionalOptions {
-    text-align: center;
-}
-
-.forgot-password,
-.create-account {
-    font-size: 14px;
-    color: #007bff; /* Primary color for links */
-    text-decoration: none;
-    margin-right: 10px;
-}
-
-.forgot-password:hover,
-.create-account:hover {
-    text-decoration: underline;
-    color: #0056b3; /* Darker shade of primary color on hover */
+/* Form Options */
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
 .checkbox-group {
-    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
 }
 
 .checkbox-group input[type="checkbox"] {
     margin-right: 10px;
+    cursor: pointer;
 }
 
 .checkbox-group label {
     font-size: 14px;
-    color: #666; /* Medium gray color for checkbox label */
+    color: #666;
+    cursor: pointer;
 }
 
-.checkbox-group input[type="checkbox"]:checked + label {
-    font-weight: bold;
-    color: #333; /* Dark gray color for checked checkbox label */
-}
-
-.create-account-message {
+.forgot-password {
     font-size: 14px;
-    color: #666; /* Medium gray color for message */
-    margin-top: 8px; /* Add some space above the message */
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
-#rememberMe {
-    margin-right: 5px;
+.forgot-password:hover {
+    color: #0056b3;
+    text-decoration: underline;
 }
 
+/* Submit Button */
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
 
+.btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.btnIcon {
+    margin-left: 10px;
+    font-size: 20px;
+}
+
+/* Create Account Link */
+.create-account-message {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #666;
+}
+
+.create-account-message a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.create-account-message a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+/* Error Message */
 .error-message {
     background-color: #f8d7da;
-    /* Light red background for error */
     color: #721c24;
-    /* Dark red text color */
-    padding: 8px 12px;
-    margin-top: 4px;
+    padding: 10px;
+    margin-top: 5px;
     font-size: 14px;
-    border-radius: 4px;
+    border-radius: 8px;
     display: inline-block;
-    /* Adjust width automatically based on text */
-    visibility: visible;
-    opacity: 1;
     animation: fadeIn 0.3s ease-out;
-    transition: opacity 0.5s ease-out;
+}
+
+.error-message::before {
+    content: '⚠️';
+    margin-right: 5px;
+    font-size: 16px;
+    vertical-align: middle;
 }
 
 @keyframes fadeIn {
@@ -204,7 +308,6 @@ body {
         opacity: 0;
         transform: translateY(-10px);
     }
-
     100% {
         opacity: 1;
         transform: translateY(0);
@@ -212,14 +315,76 @@ body {
 }
 
 
-.error-message::before {
-    content: '⚠️';
-    margin-right: 1px;
-    /* Space between the icon and the message */
-    font-size: 1.0rem;
-    /* Slightly larger icon */
-    vertical-align: middle;
-    /* Align the icon with the text */
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
 }
 
+.overlayText {
+    animation: float 10s ease-in-out infinite; /* Apply animation to overlay text only */
+}
 
+/* From Uiverse.io by Smit-Prajapati */ 
+.checkbox {
+    appearance: none;
+    width: 25px;
+    aspect-ratio: 1;
+    border-radius: 8px;
+    border: 2px solid rgb(204, 204, 204);
+    position: relative;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .checkbox::before {
+    font-family: "Quicksand", sans-serif;
+    position: absolute;
+    bottom: -13px;
+    left: 1px;
+    content: "✔";
+    font-size: 38px;
+    color:#0056B3;
+    transform: scale(0);
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .checkbox:checked::before {
+    animation: zoom 0.5s ease-in-out;
+    transform: scale(1);
+  }
+  
+  @keyframes zoom {
+    0% {
+      transform: scale(0);
+    }
+  
+    20% {
+      transform: scale(1.5);
+    }
+  
+    40% {
+      transform: scale(0.5);
+    }
+  
+    50% {
+      transform: scale(1);
+    }
+  
+    70% {
+      transform: scale(1.2);
+    }
+  
+    90% {
+      transform: scale(0.8);
+    }
+  
+    100% {
+      transform: scale(1);
+    }
+  }

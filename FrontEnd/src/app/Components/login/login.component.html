@@ -1,49 +1,85 @@
 <div class="mainContainer">
+    <!-- Inner Container -->
     <div class="innerContainer">
-        <div class="photoSection"></div>
-        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <!-- Photo Section -->
+        <div class="photoSection">
+            <div class="overlayText">
+                <h1>Welcome Back!</h1>
+                <p>Login to explore amazing features.</p>
+            </div>
+        </div>
+
+        <!-- Login Form -->
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="loginForm">
+            <!-- Content Section -->
             <div class="contentSection">
+                <!-- Title Section -->
                 <div class="titleSection">
-                    <h2 class="title">Welcome Back!</h2>
-                    <p class="subtitle">Sign in to your account</p>
+                    <h2 class="title">Let's Get Started</h2>
+                    <p class="subtitle">Sign in to continue your journey</p>
                 </div>
+
+                <!-- Social Media Login -->
+                <div class="socialMedia">
+                    <span class="bi bi-google" (click)="loginWithSocialSite('google')" title="Login with Google"></span>
+                    <span class="bi bi-twitter" (click)="loginWithSocialSite('twitter')" title="Login with Twitter"></span>
+                    <span class="bi bi-facebook" (click)="loginWithSocialSite('facebook')" title="Login with Facebook"></span>
+                </div>
+
+                <!-- Divider -->
+                <div class="divider">
+                    <span class="dividerLine"></span>
+                    <span class="dividerText">OR</span>
+                    <span class="dividerLine"></span>
+                </div>
+
+                <!-- Input Fields Section -->
                 <div class="inputFields">
-                    <div class="socialMedia">
-                        <span class="bi bi-google" (click)="loginWithSocialSite('google')"></span>
-                        <span class="bi bi-twitter" (click)="loginWithSocialSite('twitter')"></span>
-                        <span class="bi bi-facebook" (click)="loginWithSocialSite('facebook')"></span>
-                    </div>
+                    <!-- Email Input -->
                     <div class="form-group">
                         <label for="email" class="form-label">Email</label>
                         <input type="email" name="email" id="email" placeholder="Enter your email" class="form-control"
-                            formControlName="email">
+                            formControlName="email" required>
                         <div *ngIf="activeError === 'email'" class="error-message">
-                            Plese enter your email 📧
+                            Please enter your email 📧
                         </div>
                     </div>
+
+                    <!-- Password Input -->
                     <div class="form-group">
                         <label for="password" class="form-label">Password</label>
                         <input type="password" name="password" id="password" placeholder="Enter your password"
-                            class="form-control" formControlName="password">
+                            class="form-control" formControlName="password" required>
                         <div *ngIf="activeError === 'password'" class="error-message">
-                            Plese enter your password 🔒
+                            Please enter your password 🔒
                         </div>
                         <div *ngIf="activeError === 'passwordMismatch'" class="error-message">
-                            Invalid password please try again 🔒
+                            Invalid password, please try again 🔒
                         </div>
                     </div>
-                    <div class="checkbox-group">
-                        <input type="checkbox" id="rememberMe">
-                        <label for="rememberMe">Remember me</label>
+
+                    <!-- Remember Me & Forgot Password -->
+                    <div class="form-options">
+                        <div class="checkbox-group">
+                            <!-- <input type="checkbox" id="rememberMe"> -->
+                             <!-- From Uiverse.io by Smit-Prajapati --> 
+                            <input class="checkbox" type="checkbox">
+
+                            <label for="rememberMe">Remember me</label>
+                        </div>
+                        <a routerLink="/forgot-password" class="forgot-password">Forgot Password?</a>
                     </div>
                 </div>
 
-                <button type="submit" class="btn btn-primary">Sign In</button>
+                <!-- Submit Button -->
+                <button type="submit" class="btn btn-primary">
+                    <span class="btnText">Sign In</span>
+                    <span class="btnIcon">→</span>
+                </button>
 
-                <div class="additionalOptions">
-                    <a routerLink="/forgot-password" class="forgot-password">Forgot Password?</a>
-                    <p class="create-account-message">Don't have an account? <a routerLink="/register">Create an
-                            Account</a></p>
+                <!-- Create Account Link -->
+                <div class="create-account-message">
+                    Don't have an account? <a routerLink="/register">Create an Account</a>
                 </div>
             </div>
         </form>
