@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
@@ -8,10 +8,12 @@ import { RouterModule } from '@angular/router';
 import { RegisterService } from '../../services/user.service';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { CustomSnackbarComponent } from '../../Common-Custom_components/custom-snackbar/custom-snackbar.component'; 
 
 @Component({
 
   selector: 'app-login',
+  standalone: true,
   imports: [
     MatFormFieldModule,
     MatInputModule,
@@ -20,7 +22,8 @@ import { CommonModule } from '@angular/common';
     FormsModule,
     RouterModule,
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CustomSnackbarComponent
   ],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
@@ -34,6 +37,9 @@ export class LoginComponent {
   loginForm!: FormGroup;
   activeError: string | null = null;
   hideError = false;
+
+  @ViewChild(CustomSnackbarComponent) customSnackbar!: CustomSnackbarComponent;
+
 
 
   constructor(private formBuilder: FormBuilder, private RegisterService: RegisterService, private router: Router) { }
@@ -94,6 +100,9 @@ export class LoginComponent {
     }else {
       this.activeError = null;
     }
+
+
+    this.customSnackbar.show('⚠️ Please enter your email 📧', 3000, 'top', 'center');
 
     setTimeout(() => {
       this.hideError = true;

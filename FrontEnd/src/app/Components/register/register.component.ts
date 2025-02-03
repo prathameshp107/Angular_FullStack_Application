@@ -40,6 +40,7 @@ export class RegisterComponent implements OnInit {
   onSubmit() {
     if (this.registerForm.invalid) {
       this.checkFirstError();
+      this.customSnackbar.show('Please fill in all fields', 3000, 'top', 'center');
       return;
     }
     else {
